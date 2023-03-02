@@ -1,3 +1,4 @@
+//Array of questions with objects
 let questions = [
     {
         numb: 1,
@@ -11,7 +12,18 @@ let questions = [
         ]
     },
     {
-        numb: ,
+        numb: 2,
+        question: "What does GTL stand for?",
+        answer: "Gym, tan, laundry",
+        options: [
+            "Guido, tan, lift",
+            "Gym, tan, laundry",
+            "Guido, tan, lift",
+            "Gym, tequila, love"
+        ]
+    },
+    {
+        numb: 3,
         question: "?",
         answer: "",
         options: [
@@ -22,7 +34,7 @@ let questions = [
         ]
     },
     {
-        numb: ,
+        numb: 4,
         question: "?",
         answer: "",
         options: [
@@ -33,18 +45,7 @@ let questions = [
         ]
     },
     {
-        numb: ,
-        question: "?",
-        answer: "",
-        options: [
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-    {
-        numb: ,
+        numb: 5,
         question: "?",
         answer: "",
         options: [

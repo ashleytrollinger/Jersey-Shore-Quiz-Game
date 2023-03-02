@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <script src="script.js"></script>
+
     <section id="homescreen">
 
         <section id="rules">
@@ -21,27 +21,19 @@
                 <li>Try to answer all the questions right before the timer rings because the cabs are here!</li>
             </ol>
             <section id="homepgbuttons">
-                <button id="start" onclick="startQuiz()">Start Quiz</button>
+                <button id="start">Start Quiz</button>
                 <button id="scores">High Scores</button>
             </section>
         </section>
     </section>
 
-    <section id="quizscreen">
-        <div id="timer"></div>
-        <section id="question">
-            <h1>Who calls Angelina a "dirty little hamster"?</h1>
-        </section>
-        <section id="answers">
-            <ul>
-                <li id="answer1">Pauly D</li>
-                <li id="answer2">Vinny</li>
-                <li id="answer3">Snooki</li>
-                <li id="answer4">Mike</li>
-            </ul>
-        </section>
-    </section>
 
+    <section id="quizscreen">
+        <section id="timer"></section>
+        <div id="question"></div>
+        <div id="answers"></div>
+    </section>
+    <script src="script.js"></script>
 </body>
 
 </html>

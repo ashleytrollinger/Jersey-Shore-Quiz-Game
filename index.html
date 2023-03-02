@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jersey Shore Quiz Game</title>
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <section id="homescreen">
+
+        <section id="rules">
+            <ol>
+                <li>The timer at the top of the screen will be counting down.</li>
+                <li>The quiz will end when you answer each question or time runs out.</li>
+                <li>Be careful though, wrong answers will subtract from your time</li>
+                <li>Try to answer all the questions right before the timer rings because the cabs are here!</li>
+            </ol>
+            <section id="homepgbuttons">
+                <button id="start" onclick="startQuiz()">Start Quiz</button>
+                <button id="scores">High Scores</button>
+            </section>
+        </section>
+    </section>
+
+    <section id="quizscreen">
+        <div id="timer"></div>
+        <section id="question">
+            <h1>Who calls Angelina a "dirty little hamster"?</h1>
+        </section>
+        <section id="answers">
+            <ul>
+                <li id="answer1">Pauly D</li>
+                <li id="answer2">Vinny</li>
+                <li id="answer3">Snooki</li>
+                <li id="answer4">Mike</li>
+            </ul>
+        </section>
+    </section>
+
+</body>
+
+</html>

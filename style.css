@@ -1,34 +1,94 @@
 body {
     background-color: rgb(213, 209, 209);
     cursor: pointer;
-}
-
-#homescreen {
     display: flex;
     /*centers content horizontaly*/
     justify-content: center;
     align-items: center;
     /*centers content vertically*/
     height: 500px;
-
 }
+
+#homescreen {}
+
+#logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+}
+
 
 #rules {
     background-color: rgb(255, 255, 255);
     border-radius: 25px;
-    font-size: 25px;
+    font-size: 3vw;
+    font-family: 'Roberto', sans-serif;
 }
 
 /*Start and Highscore buttons*/
-#start {
-    font-size: 30px;
+#homepgbuttons {
+    display: flex;
+    justify-content: center;
 }
 
-#scores {
-    font-size: 30px;
-
+#homepgbuttons button {
+    border: 0.1em solid black;
+    border-radius: 0.12em;
+    box-sizing: border-box;
+    font-family: 'Roberto', sans-serif;
+    font-weight: 300;
+    font-size: 3vw;
+    color: black;
+    text-align: center;
 }
 
+#homepgbuttons button:hover {
+    color: rgb(0, 0, 0);
+    background-color: rgb(230, 27, 25);
+}
+
+/*Question screen styling*/
 #quizscreen {
-    
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    font-size: 3vw;
+    display: block;
+}
+
+#timer {
+    font-family: 'Roberto', sans-serif;
+    font-size: 3vw;
+}
+
+#quizscreen button {
+    width: 47%;
+    font-size: 3vw;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    border-width: .4vw;
+    margin: .3vw;
+}
+
+#quizscreen button:hover {
+    color: rgb(230, 27, 25);
+    border-color: rgb(230, 27, 25);
+    font-family: 'Roberto', sans-serif;
+}
+
+/*Highscore screen styling*/
+#scoreScreen {
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    font-size: 3vw;
+    display: block;
+}
+
+#scoreScreen h1 {
+    text-align: center;
+}
+
+#questionScreen button {
+    flex-wrap: wrap;
+    size: 25%;
 }

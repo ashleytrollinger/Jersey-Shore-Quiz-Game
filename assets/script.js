@@ -9,6 +9,9 @@ var rulesPage = document.querySelector("#rules");
 var quizScreen = document.querySelector("#quizscreen");
 var questionScreen = document.querySelector("#questionScreen");
 var scoreScreen = document.querySelector("#scoreScreen");
+var scorez = document.querySelector("#scorez");
+
+
 
 /*Event listener added on click of start button that calls the startQuiz function */
 var startButton = document.querySelector("#start");
@@ -21,7 +24,8 @@ var currentQuestion = 0;
 /*GO BACK AND CHANGE THE FUNCTION IN HERE> CREATE A NEW ONE THAT TAKES YOU JUST TO THE HS AND NOT TO THE UPDATED ONE*/
 var highScoreButton = document.querySelector("#scores");
 highScoreButton.addEventListener("click", highScorePage);
-const highScores = JSON.parse(localStorage.getItem("highScores")) || [
+/*Saving the highScores array as highScore in local storage as either what has already been defined or an empty array */
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [
 
 ];
 
@@ -210,6 +214,7 @@ function loadResults() {
     resultsParagraph.appendChild(resultsParagraphText);
     scoreScreen.appendChild(resultsParagraph);
 
+    /*Reassigns the timerSecLeft as whatever time was left */
     var timeCompleted = timerSecLeft;
 
 
@@ -225,29 +230,54 @@ function loadResults() {
     submitButton.addEventListener("click", saveScore);
     scoreScreen.appendChild(submitButton);
 
+    var backHome = document.createElement("button");
+    var backHomeWords = document.createTextNode("Back to Home");
+    backHome.appendChild(backHomeWords);
+    backHome.addEventListener("click", playAgain)
+    scoreScreen.appendChild(backHome);
 
 
-
+}
+function playAgain() {
+    homePage.replaceChild(rulesPage, scoreScreen);
 }
 
 function highScorePage() {
-    homePage.replaceChild(scoreScreen, rulesPage);
-    var resultsHeader = document.createElement("h1");
-    var resultsHeaderV = document.createTextNode("High Scores");
-    resultsHeader.appendChild(resultsHeaderV);
-    scoreScreen.appendChild(resultsHeader);
+
+    if (homePage.children == quizScreen) {
+        homePage.replaceChild(scoreScreen, quizScreen);
+    } else if (homePage.children == rulesPage) {
+        homePage.replaceChild(scoreScreen, rulesPage);
+    }
+
+
+    let highScorez = localStorage.getItem("highScores");
+    let manipHighScorez = JSON.parse(highScorez);
+
+
+    for (let i = 0; i < manipHighScorez.length; i++) {
+        var scoreListText = document.createTextNode(manipHighScorez[i].playerName + " " + manipHighScorez[i].score);
+        document.getElementById("scorez").appendChild(scoreListText);
+        document.getElementById("scorez").appendChild(document.createElement("br"));
+
+    }
 
 }
 
+
 function saveScore() {
     var playerName = document.getElementById("scoreName").value;
-
+    var temp = localStorage.getItem("highScores");
+    if (temp != null) {
+        highScores = JSON.parse(temp);
+    }
     var highscoreObject = {
         playerName: playerName,
         score: timerSecLeft
     };
+
     highScores.push(highscoreObject);
     highScores.sort(function (a, b) { return b.score - a.score });
     localStorage.setItem("highScores", JSON.stringify(highScores));
-    scoreScreen.appendChild(highScores);
+    highScorePage();
 }
